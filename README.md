@@ -17,6 +17,30 @@ Both modules share:
 - Google OR-Tools as the unified solver
 - Shared validation and metrics framework
 
+## Important: This is NOT a Machine Learning Project
+
+AeroUnity is a **constraint-based optimization framework**, not a data-driven ML model. Key differences:
+
+| Aspect | AeroUnity (Optimization) | ML Projects |
+|--------|-------------------------|-------------|
+| **Approach** | Physics-based + OR-Tools solver | Neural networks, training |
+| **"Data"** | Mission scenarios (waypoints, orbits) | Training/test/validation datasets |
+| **Validation** | Constraint checks, stress tests | Accuracy on held-out test set |
+| **Output** | Optimal plans (deterministic) | Predictions (probabilistic) |
+| **Dependencies** | OR-Tools, NumPy, SciPy | TensorFlow, PyTorch, scikit-learn |
+
+**No training required** - the system uses mathematical optimization to find optimal solutions given constraints and objectives.
+
+### Validation Methodology
+
+Instead of train/test/validation splits, AeroUnity uses:
+
+1. **Scenario-Based Testing**: Run planner on diverse mission scenarios
+2. **Monte-Carlo Validation**: 100 trials with random wind perturbations
+3. **Edge Case Testing**: 25+ stress scenarios (extreme wind, battery limits, complex obstacles)
+4. **Constraint Verification**: Ensure all solutions satisfy hard constraints (energy, geofencing, etc.)
+5. **Reproducibility**: Deterministic outputs for same inputs
+
 ## Quick Start
 
 ### Prerequisites
@@ -39,6 +63,22 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 # Install dependencies
 pip install -r requirements.txt
 ```
+
+### Quick Demo
+
+Run a simple demonstration of both mission planners:
+
+```bash
+# Run both aircraft and spacecraft missions
+python main.py --mission both
+
+# Or run individually
+python main.py --mission aircraft
+python main.py --mission spacecraft
+```
+
+**Runtime**: ~10-15 seconds  
+**Output**: Console summary + JSON results in `outputs/`
 
 ### Reproduce Results
 
