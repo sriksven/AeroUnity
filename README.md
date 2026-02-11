@@ -8,8 +8,8 @@ A unified aerospace mission planning framework for AeroHack 2026 that demonstrat
 
 AeroUnity solves two distinct aerospace problems using the **same underlying planning architecture**:
 
-- **🛩️ Aircraft Mission Planning**: UAV route optimization with wind, energy, maneuver constraints, and geofencing
-- **🛰️ Spacecraft Mission Planning**: 7-day CubeSat observation and downlink scheduling with orbit mechanics
+- **Aircraft Mission Planning**: UAV route optimization with wind, energy, maneuver constraints, and geofencing
+- **Spacecraft Mission Planning**: 7-day CubeSat observation and downlink scheduling with orbit mechanics
 
 Both modules share:
 - Common constraint representation framework
@@ -93,19 +93,19 @@ python run_enhanced_validation.py
 ```
 
 **Standard validation** will:
-1. ✅ Run aircraft mission planning with Monte-Carlo wind uncertainty (100 trials)
-2. ✅ Run spacecraft mission planning with 7-day scheduling
-3. ✅ Validate all constraints (zero violations required)
-4. ✅ Generate all plots and visualizations
-5. ✅ Export schedules and metrics to JSON/CSV
-6. ✅ Create complete results bundle
+1. Run aircraft mission planning with Monte-Carlo wind uncertainty (100 trials)
+2. Run spacecraft mission planning with 7-day scheduling
+3. Validate all constraints (zero violations required)
+4. Generate all plots and visualizations
+5. Export schedules and metrics to JSON/CSV
+6. Create complete results bundle
 
 **Enhanced validation** adds:
-7. ✅ Extreme wind conditions (7 scenarios: calm to 32 m/s storm)
-8. ✅ Battery stress tests (4 levels: 50-1000 Wh)
-9. ✅ Complex geofencing (4 densities: 0-99 obstacles)
-10. ✅ Orbit edge cases (5 configurations: LEO, polar, sun-sync, eccentric)
-11. ✅ Failure mode analysis (2 impossible scenarios)
+7. Extreme wind conditions (7 scenarios: calm to 32 m/s storm)
+8. Battery stress tests (4 levels: 50-1000 Wh)
+9. Complex geofencing (4 densities: 0-99 obstacles)
+10. Orbit edge cases (5 configurations: LEO, polar, sun-sync, eccentric)
+11. Failure mode analysis (2 impossible scenarios)
 
 **Expected runtime**: 
 - Standard: 2-3 minutes
@@ -234,14 +234,14 @@ python validation/spacecraft_validation.py
 ## Validation & Robustness
 
 ### Aircraft
-- ✅ Monte-Carlo wind uncertainty (100 trials, >95% success)
-- ✅ Zero constraint violations (geofence, altitude, energy, turn rate)
-- ✅ Performance metrics (time, distance, energy efficiency)
+- Monte-Carlo wind uncertainty (100 trials, >95% success)
+- Zero constraint violations (geofence, altitude, energy, turn rate)
+- Performance metrics (time, distance, energy efficiency)
 
 ### Spacecraft
-- ✅ Schedule feasibility (no overlaps, constraints satisfied)
-- ✅ Mission value optimization (priority-weighted observations)
-- ✅ Stress testing (limited stations, high priority, short missions)
+- Schedule feasibility (no overlaps, constraints satisfied)
+- Mission value optimization (priority-weighted observations)
+- Stress testing (limited stations, high priority, short missions)
 
 ## License
 

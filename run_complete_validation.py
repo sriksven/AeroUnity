@@ -84,14 +84,14 @@ def run_complete_pipeline():
     )
     
     aircraft_solution = aircraft_planner.solve()
-    print(f"   ✓ Route found: {len(aircraft_solution['route_indices'])} waypoints")
-    print(f"   ✓ Total time: {aircraft_solution['total_time']/60:.1f} min")
-    print(f"   ✓ Total energy: {aircraft_solution['total_energy']/3600:.1f} Wh")
+    print(f"   OK Route found: {len(aircraft_solution['route_indices'])} waypoints")
+    print(f"   OK Total time: {aircraft_solution['total_time']/60:.1f} min")
+    print(f"   OK Total energy: {aircraft_solution['total_energy']/3600:.1f} Wh")
     
     # Validate aircraft solution
     print("\n2. Validating aircraft constraints...")
     is_valid, violations = aircraft_planner.validate_solution(aircraft_solution)
-    print(f"   ✓ Constraint check: {'PASS' if is_valid else 'FAIL'}")
+    print(f"   OK Constraint check: {'PASS' if is_valid else 'FAIL'}")
     if violations:
         for v in violations:
             print(f"     - {v}")
@@ -164,14 +164,14 @@ def run_complete_pipeline():
     )
     
     spacecraft_solution = spacecraft_planner.solve()
-    print(f"   ✓ Observations scheduled: {spacecraft_solution['num_observations']}")
-    print(f"   ✓ Downlinks scheduled: {spacecraft_solution['num_downlinks']}")
-    print(f"   ✓ Science value: {spacecraft_solution['mission_value']:.1f}")
+    print(f"   OK Observations scheduled: {spacecraft_solution['num_observations']}")
+    print(f"   OK Downlinks scheduled: {spacecraft_solution['num_downlinks']}")
+    print(f"   OK Science value: {spacecraft_solution['mission_value']:.1f}")
     
     # Validate spacecraft solution
     print("\n2. Validating spacecraft constraints...")
     is_valid, violations = spacecraft_planner.validate_solution(spacecraft_solution)
-    print(f"   ✓ Constraint check: {'PASS' if is_valid else 'FAIL'}")
+    print(f"   OK Constraint check: {'PASS' if is_valid else 'FAIL'}")
     if violations:
         for v in violations:
             print(f"     - {v}")
@@ -197,7 +197,7 @@ def run_complete_pipeline():
                                     output_dir / "spacecraft_schedule.json")
     MissionScheduler.export_to_csv(spacecraft_solution['schedule'],
                                    output_dir / "spacecraft_schedule.csv")
-    print("   ✓ Schedule exported to JSON and CSV")
+    print("   OK Schedule exported to JSON and CSV")
     
     # Generate spacecraft visualizations
     print("\n5. Generating spacecraft visualizations...")
@@ -215,21 +215,21 @@ def run_complete_pipeline():
     print(" " * 30 + "VALIDATION COMPLETE")
     print("=" * 80)
     
-    print("\n📊 AIRCRAFT MISSION RESULTS:")
+    print("\nAIRCRAFT MISSION RESULTS:")
     print(f"   • Success Rate (Monte-Carlo): {mc_results['success_rate']*100:.1f}%")
     print(f"   • Constraint Violations: {len(constraint_results['violations'])}")
     print(f"   • Mission Time: {performance_metrics['total_time_min']:.1f} min")
     print(f"   • Energy Consumption: {performance_metrics['total_energy_wh']:.1f} Wh")
     print(f"   • Distance Traveled: {performance_metrics['total_distance_km']:.2f} km")
     
-    print("\n🛰️  SPACECRAFT MISSION RESULTS:")
+    print("\nSPACECRAFT MISSION RESULTS:")
     print(f"   • Schedule Valid: {feasibility_results['schedule_valid']}")
     print(f"   • Total Science Value: {value_metrics['total_science_value']:.1f}")
     print(f"   • Observations: {value_metrics['num_observations']}")
     print(f"   • Downlinks: {value_metrics['num_downlinks']}")
     print(f"   • Schedule Utilization: {value_metrics['schedule_stats']['utilization_percent']:.1f}%")
     
-    print("\n📁 OUTPUT FILES GENERATED:")
+    print("\nOUTPUT FILES GENERATED:")
     print("   outputs/")
     print("   ├── aircraft_flight_path.png")
     print("   ├── aircraft_altitude_profile.png")
@@ -249,7 +249,7 @@ def run_complete_pipeline():
     print("       ├── spacecraft_value_metrics.json")
     print("       └── spacecraft_stress_tests.json")
     
-    print("\n✅ All validation and visualization complete!")
+    print("\nAll validation and visualization complete!")
     print("=" * 80 + "\n")
     
     # Create summary JSON

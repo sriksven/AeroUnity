@@ -46,11 +46,11 @@ def run_enhanced_validation():
     print(" "*30 + "FINAL SUMMARY")
     print("="*90)
     
-    print("\n✅ STANDARD VALIDATION:")
+    print("\nSTANDARD VALIDATION:")
     print(f"   • Aircraft Monte-Carlo: {standard_results['aircraft']['monte_carlo_success_rate']*100:.1f}% success")
     print(f"   • Spacecraft Schedule: {standard_results['spacecraft']['num_observations']} observations")
     
-    print("\n✅ EDGE CASE TESTING:")
+    print("\nEDGE CASE TESTING:")
     print(f"   • Extreme wind scenarios: {len(edge_case_results['extreme_wind'])} tested")
     print(f"   • Battery stress tests: {len(edge_case_results['battery_stress'])} tested")
     print(f"   • Geofencing complexity: {len(edge_case_results['complex_geofencing'])} tested")
@@ -68,14 +68,14 @@ def run_enhanced_validation():
         3  # Spacecraft stress tests
     )
     
-    print(f"\n📊 TOTAL TEST SCENARIOS: {total_scenarios}")
-    print("\n📁 ALL RESULTS SAVED TO:")
+    print(f"\nTOTAL TEST SCENARIOS: {total_scenarios}")
+    print("\nALL RESULTS SAVED TO:")
     print("   • outputs/validation/ (standard tests)")
     print("   • outputs/edge_cases/ (edge case tests)")
     print("   • outputs/*.png (8 visualization plots)")
     
     print("\n" + "="*90)
-    print(" "*20 + "🎉 ENHANCED VALIDATION COMPLETE! 🎉")
+    print(" "*20 + "ENHANCED VALIDATION COMPLETE! ")
     print("="*90 + "\n")
     
     return {

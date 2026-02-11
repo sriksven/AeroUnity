@@ -75,7 +75,7 @@ class AircraftVisualizer:
         plt.savefig(self.output_dir / save_name, dpi=300, bbox_inches='tight')
         plt.close()
         
-        print(f"✓ Saved flight path plot to {save_name}")
+        print(f"OK Saved flight path plot to {save_name}")
     
     def plot_altitude_profile(self, solution: Dict[str, Any],
                              save_name: str = "aircraft_altitude_profile.png"):
@@ -109,7 +109,7 @@ class AircraftVisualizer:
         plt.savefig(self.output_dir / save_name, dpi=300, bbox_inches='tight')
         plt.close()
         
-        print(f"✓ Saved altitude profile to {save_name}")
+        print(f"OK Saved altitude profile to {save_name}")
     
     def plot_performance_metrics(self, metrics: Dict[str, Any],
                                 save_name: str = "aircraft_performance.png"):
@@ -144,7 +144,7 @@ class AircraftVisualizer:
         plt.savefig(self.output_dir / save_name, dpi=300, bbox_inches='tight')
         plt.close()
         
-        print(f"✓ Saved performance metrics to {save_name}")
+        print(f"OK Saved performance metrics to {save_name}")
     
     def plot_monte_carlo_results(self, mc_results: Dict[str, Any],
                                 save_name: str = "aircraft_monte_carlo.png"):
@@ -161,7 +161,7 @@ class AircraftVisualizer:
         energies = mc_results.get('energies', [])
         
         if not times:
-            print("⚠ No Monte-Carlo data to plot")
+            print("WARNING: No Monte-Carlo data to plot")
             return
         
         # Time distribution
@@ -202,4 +202,4 @@ class AircraftVisualizer:
         plt.savefig(self.output_dir / save_name, dpi=300, bbox_inches='tight')
         plt.close()
         
-        print(f"✓ Saved Monte-Carlo results to {save_name}")
+        print(f"OK Saved Monte-Carlo results to {save_name}")

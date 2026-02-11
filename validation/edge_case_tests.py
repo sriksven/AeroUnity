@@ -88,7 +88,7 @@ class EdgeCaseValidator:
                 'violations': violations
             }
             
-            print(f"  ✓ Success: {is_valid}, Time: {solution['total_time']:.1f}s, Energy: {solution['total_energy']/3600:.1f}Wh")
+            print(f"  OK Success: {is_valid}, Time: {solution['total_time']:.1f}s, Energy: {solution['total_energy']/3600:.1f}Wh")
         
         # Save results
         with open(self.output_dir / 'extreme_wind_tests.json', 'w') as f:
@@ -149,7 +149,7 @@ class EdgeCaseValidator:
                 'violations': violations
             }
             
-            print(f"  ✓ Success: {is_valid}, Energy used: {energy_used_pct:.1f}%, Waypoints: {len(solution['route_indices'])}")
+            print(f"  OK Success: {is_valid}, Energy used: {energy_used_pct:.1f}%, Waypoints: {len(solution['route_indices'])}")
         
         # Save results
         with open(self.output_dir / 'battery_stress_tests.json', 'w') as f:
@@ -217,7 +217,7 @@ class EdgeCaseValidator:
                 'violations': violations
             }
             
-            print(f"  ✓ Success: {is_valid}, Time: {solution['total_time']:.1f}s, Distance: {solution['distance']:.0f}m")
+            print(f"  OK Success: {is_valid}, Time: {solution['total_time']:.1f}s, Distance: {solution['distance']:.0f}m")
         
         # Save results
         with open(self.output_dir / 'geofencing_tests.json', 'w') as f:
@@ -317,7 +317,7 @@ class EdgeCaseValidator:
                 'violations': violations
             }
             
-            print(f"  ✓ Success: {is_valid}, Observations: {solution['num_observations']}, Value: {solution['mission_value']:.0f}")
+            print(f"  OK Success: {is_valid}, Observations: {solution['num_observations']}, Value: {solution['mission_value']:.0f}")
         
         # Save results
         with open(self.output_dir / 'orbit_edge_cases.json', 'w') as f:
@@ -362,7 +362,7 @@ class EdgeCaseValidator:
             'violations': violations,
             'graceful_handling': len(violations) > 0
         }
-        print(f"  ✓ Handled gracefully: {len(violations) > 0}, Violations: {len(violations)}")
+        print(f"  OK Handled gracefully: {len(violations) > 0}, Violations: {len(violations)}")
         
         # Test 2: No visibility windows (impossible orbit/target combination)
         print("\nTest 2: No visibility windows")
@@ -401,7 +401,7 @@ class EdgeCaseValidator:
             'targets_covered': len(set([act['target'] for act in solution_sc['schedule'] if act['type'] == 'observation'])),
             'graceful_handling': True  # System doesn't crash
         }
-        print(f"  ✓ Handled gracefully: True, Observations: {solution_sc['num_observations']}")
+        print(f"  OK Handled gracefully: True, Observations: {solution_sc['num_observations']}")
         
         # Save results
         with open(self.output_dir / 'failure_mode_tests.json', 'w') as f:
@@ -432,19 +432,19 @@ def run_all_edge_cases():
     print(" " * 25 + "EDGE CASE TEST SUMMARY")
     print("="*80)
     
-    print("\n✅ AIRCRAFT EDGE CASES:")
+    print("\nAIRCRAFT EDGE CASES:")
     print(f"  • Extreme wind scenarios: {len(all_results['extreme_wind'])} tested")
     print(f"  • Battery stress scenarios: {len(all_results['battery_stress'])} tested")
     print(f"  • Geofencing complexity: {len(all_results['complex_geofencing'])} tested")
     
-    print("\n✅ SPACECRAFT EDGE CASES:")
+    print("\nSPACECRAFT EDGE CASES:")
     print(f"  • Orbit configurations: {len(all_results['orbit_edge_cases'])} tested")
     
-    print("\n✅ FAILURE MODE ANALYSIS:")
+    print("\nFAILURE MODE ANALYSIS:")
     print(f"  • Failure scenarios: {len(all_results['failure_modes'])} tested")
-    print(f"  • All handled gracefully: ✓")
+    print(f"  • All handled gracefully: OK")
     
-    print("\n📁 Results saved to: outputs/edge_cases/")
+    print("\nResults saved to: outputs/edge_cases/")
     print("="*80)
     
     return all_results

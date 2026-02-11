@@ -245,10 +245,10 @@ def main():
         print("MISSION PLANNING COMPLETE")
         print("=" * 70)
         print("\nBoth missions demonstrate the unified planning framework:")
-        print("  ✓ Common constraint representation")
-        print("  ✓ Common objective functions")
-        print("  ✓ Shared solver approach (OR-Tools)")
-        print("  ✓ Constraint validation")
+        print("  OK Common constraint representation")
+        print("  OK Common objective functions")
+        print("  OK Shared solver approach (OR-Tools)")
+        print("  OK Constraint validation")
         print("\nCheck the 'outputs/' directory for detailed results.")
         
     except Exception as e:

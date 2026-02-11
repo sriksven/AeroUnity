@@ -77,14 +77,14 @@ AeroUnity/
 
 ## What's Tracked in Git
 
-### Tracked ✅
+### Tracked 
 - All source code (`src/`)
 - All validation suites (`validation/`)
 - All documentation (`docs/`, `README.md`)
 - Validation results (`outputs/**/*.json`, `outputs/**/*.csv`)
 - Configuration (`requirements.txt`, `.gitignore`)
 
-### Ignored ❌
+### Ignored 
 - Generated plots (`outputs/*.png`) - regenerable via validation scripts
 - Log files (`*.log`) - temporary
 - Python cache (`__pycache__/`, `*.pyc`)
@@ -106,7 +106,7 @@ python run_enhanced_validation.py
 ## Clean Repository
 
 The repository is now optimized for:
-- ✅ **Minimal size**: Only essential files tracked
-- ✅ **Reproducibility**: All outputs can be regenerated
-- ✅ **Clarity**: Clear separation of code, tests, docs, and results
-- ✅ **Professional**: No temporary files or redundant directories
+- **Minimal size**: Only essential files tracked
+- **Reproducibility**: All outputs can be regenerated
+- **Clarity**: Clear separation of code, tests, docs, and results
+- **Professional**: No temporary files or redundant directories

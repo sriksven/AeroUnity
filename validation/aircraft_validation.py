@@ -142,9 +142,9 @@ class AircraftValidator:
         with open(self.output_dir / 'aircraft_monte_carlo.json', 'w') as f:
             json.dump(convert_to_json_serializable(results), f, indent=2)
         
-        print(f"✓ Success rate: {results['success_rate']*100:.1f}%")
-        print(f"✓ Mean time: {results['time_stats']['mean']:.1f} ± {results['time_stats']['std']:.1f} s")
-        print(f"✓ Mean energy: {results['energy_stats']['mean']:.1f} ± {results['energy_stats']['std']:.1f} J")
+        print(f"OK Success rate: {results['success_rate']*100:.1f}%")
+        print(f"OK Mean time: {results['time_stats']['mean']:.1f} ± {results['time_stats']['std']:.1f} s")
+        print(f"OK Mean energy: {results['energy_stats']['mean']:.1f} ± {results['energy_stats']['std']:.1f} J")
         
         return results
     
@@ -191,9 +191,9 @@ class AircraftValidator:
         with open(self.output_dir / 'aircraft_constraint_checks.json', 'w') as f:
             json.dump(convert_to_json_serializable(checks), f, indent=2)
         
-        print(f"✓ Overall valid: {checks['overall_valid']}")
-        print(f"✓ Geofence violations: {checks['geofence_check']['violations']}")
-        print(f"✓ Energy remaining: {checks['energy_check']['remaining_percent']:.1f}%")
+        print(f"OK Overall valid: {checks['overall_valid']}")
+        print(f"OK Geofence violations: {checks['geofence_check']['violations']}")
+        print(f"OK Energy remaining: {checks['energy_check']['remaining_percent']:.1f}%")
         
         return checks
     
@@ -291,10 +291,10 @@ class AircraftValidator:
         with open(self.output_dir / 'aircraft_performance_metrics.json', 'w') as f:
             json.dump(convert_to_json_serializable(metrics), f, indent=2)
         
-        print(f"✓ Mission time: {metrics['total_time_min']:.1f} min")
-        print(f"✓ Distance: {metrics['total_distance_km']:.2f} km")
-        print(f"✓ Energy: {metrics['total_energy_wh']:.1f} Wh")
-        print(f"✓ Avg speed: {metrics['avg_speed_ms']:.1f} m/s")
+        print(f"OK Mission time: {metrics['total_time_min']:.1f} min")
+        print(f"OK Distance: {metrics['total_distance_km']:.2f} km")
+        print(f"OK Energy: {metrics['total_energy_wh']:.1f} Wh")
+        print(f"OK Avg speed: {metrics['avg_speed_ms']:.1f} m/s")
         
         return metrics
 
@@ -340,9 +340,9 @@ def run_aircraft_validation():
     print("\n" + "=" * 70)
     print("AIRCRAFT VALIDATION COMPLETE")
     print("=" * 70)
-    print(f"✓ Monte-Carlo success rate: {mc_results['success_rate']*100:.1f}%")
-    print(f"✓ Constraint violations: {len(constraint_results['violations'])}")
-    print(f"✓ Results saved to outputs/validation/")
+    print(f"OK Monte-Carlo success rate: {mc_results['success_rate']*100:.1f}%")
+    print(f"OK Constraint violations: {len(constraint_results['violations'])}")
+    print(f"OK Results saved to outputs/validation/")
     
     return {
         'monte_carlo': mc_results,

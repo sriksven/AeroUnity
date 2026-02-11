@@ -56,10 +56,10 @@ class SpacecraftValidator:
         with open(self.output_dir / 'spacecraft_feasibility.json', 'w') as f:
             json.dump(checks, f, indent=2, default=str)
         
-        print(f"✓ Schedule valid: {checks['schedule_valid']}")
-        print(f"✓ Total activities: {checks['num_activities']}")
-        print(f"✓ Overlaps found: {checks['overlaps']['count']}")
-        print(f"✓ Target coverage: {checks['coverage_stats']['targets_observed']}/{checks['coverage_stats']['total_targets']}")
+        print(f"OK Schedule valid: {checks['schedule_valid']}")
+        print(f"OK Total activities: {checks['num_activities']}")
+        print(f"OK Overlaps found: {checks['overlaps']['count']}")
+        print(f"OK Target coverage: {checks['coverage_stats']['targets_observed']}/{checks['coverage_stats']['total_targets']}")
         
         return checks
     
@@ -89,10 +89,10 @@ class SpacecraftValidator:
         with open(self.output_dir / 'spacecraft_value_metrics.json', 'w') as f:
             json.dump(metrics, f, indent=2, default=str)
         
-        print(f"✓ Total science value: {metrics['total_science_value']:.1f}")
-        print(f"✓ Observations: {metrics['num_observations']}")
-        print(f"✓ Downlinks: {metrics['num_downlinks']}")
-        print(f"✓ Utilization: {metrics['schedule_stats']['utilization_percent']:.1f}%")
+        print(f"OK Total science value: {metrics['total_science_value']:.1f}")
+        print(f"OK Observations: {metrics['num_observations']}")
+        print(f"OK Downlinks: {metrics['num_downlinks']}")
+        print(f"OK Utilization: {metrics['schedule_stats']['utilization_percent']:.1f}%")
         
         return metrics
     
@@ -270,10 +270,10 @@ def run_spacecraft_validation():
     print("\n" + "=" * 70)
     print("SPACECRAFT VALIDATION COMPLETE")
     print("=" * 70)
-    print(f"✓ Schedule valid: {feasibility_results['schedule_valid']}")
-    print(f"✓ Mission value: {value_results['total_science_value']:.1f}")
-    print(f"✓ Stress tests completed: {len(stress_results)}")
-    print(f"✓ Results saved to outputs/validation/")
+    print(f"OK Schedule valid: {feasibility_results['schedule_valid']}")
+    print(f"OK Mission value: {value_results['total_science_value']:.1f}")
+    print(f"OK Stress tests completed: {len(stress_results)}")
+    print(f"OK Results saved to outputs/validation/")
     
     return {
         'feasibility': feasibility_results,

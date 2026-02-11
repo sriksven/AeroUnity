@@ -30,7 +30,7 @@ class SpacecraftVisualizer:
             save_name: Output filename
         """
         if not schedule:
-            print("⚠ No schedule data to plot")
+            print("WARNING: No schedule data to plot")
             return
             
         fig, ax = plt.subplots(figsize=(14, 8))
@@ -80,7 +80,7 @@ class SpacecraftVisualizer:
         plt.savefig(self.output_dir / save_name, dpi=300, bbox_inches='tight')
         plt.close()
         
-        print(f"✓ Saved schedule Gantt chart to {save_name}")
+        print(f"OK Saved schedule Gantt chart to {save_name}")
     
     def plot_activity_timeline(self, schedule: List[Dict[str, Any]],
                               save_name: str = "spacecraft_timeline.png"):
@@ -92,7 +92,7 @@ class SpacecraftVisualizer:
             save_name: Output filename
         """
         if not schedule:
-            print("⚠ No schedule data to plot")
+            print("WARNING: No schedule data to plot")
             return
             
         fig, ax = plt.subplots(figsize=(14, 6))
@@ -124,7 +124,7 @@ class SpacecraftVisualizer:
         plt.savefig(self.output_dir / save_name, dpi=300, bbox_inches='tight')
         plt.close()
         
-        print(f"✓ Saved activity timeline to {save_name}")
+        print(f"OK Saved activity timeline to {save_name}")
     
     def plot_mission_statistics(self, stats: Dict[str, Any],
                                 save_name: str = "spacecraft_statistics.png"):
@@ -167,7 +167,7 @@ class SpacecraftVisualizer:
         plt.savefig(self.output_dir / save_name, dpi=300, bbox_inches='tight')
         plt.close()
         
-        print(f"✓ Saved mission statistics to {save_name}")
+        print(f"OK Saved mission statistics to {save_name}")
     
     def plot_target_coverage(self, solution: Dict[str, Any], 
                             all_targets: List[Any],
@@ -215,4 +215,4 @@ class SpacecraftVisualizer:
         plt.savefig(self.output_dir / save_name, dpi=300, bbox_inches='tight')
         plt.close()
         
-        print(f"✓ Saved target coverage map to {save_name}")
+        print(f"OK Saved target coverage map to {save_name}")

@@ -10,13 +10,13 @@ Tests aircraft performance under varying wind conditions:
 
 | Scenario | Wind Speed | Result |
 |----------|------------|--------|
-| Calm | 0.7 m/s | ✅ Pass |
-| Moderate | 7.1 m/s | ✅ Pass |
-| Strong | 18.0 m/s | ✅ Pass |
-| **Storm** | **32.0 m/s** | ✅ Pass |
-| Crosswind | 20.0 m/s | ✅ Pass |
-| Headwind | 20.0 m/s | ✅ Pass |
-| Tailwind | 20.0 m/s | ✅ Pass |
+| Calm | 0.7 m/s | Pass |
+| Moderate | 7.1 m/s | Pass |
+| Strong | 18.0 m/s | Pass |
+| **Storm** | **32.0 m/s** | Pass |
+| Crosswind | 20.0 m/s | Pass |
+| Headwind | 20.0 m/s | Pass |
+| Tailwind | 20.0 m/s | Pass |
 
 **Key Finding**: System handles extreme storm conditions (32 m/s winds) successfully.
 
@@ -25,10 +25,10 @@ Tests aircraft with varying battery capacities on a long 15-waypoint mission:
 
 | Battery | Energy Used | Waypoints | Result |
 |---------|-------------|-----------|--------|
-| 50 Wh (minimal) | 161.2% | 16 | ❌ Correctly fails |
-| 100 Wh (low) | 80.6% | 16 | ✅ Pass |
-| 500 Wh (normal) | 16.1% | 16 | ✅ Pass |
-| 1000 Wh (extended) | 8.1% | 16 | ✅ Pass |
+| 50 Wh (minimal) | 161.2% | 16 | Correctly fails |
+| 100 Wh (low) | 80.6% | 16 | Pass |
+| 500 Wh (normal) | 16.1% | 16 | Pass |
+| 1000 Wh (extended) | 8.1% | 16 | Pass |
 
 **Key Finding**: System correctly identifies insufficient battery scenarios and validates feasible missions.
 
@@ -37,10 +37,10 @@ Tests aircraft navigation through increasingly complex obstacle fields:
 
 | Scenario | Obstacles | Result |
 |----------|-----------|--------|
-| No obstacles | 0 | ✅ Pass |
-| Sparse | 2 | ✅ Pass |
-| Dense | 27 | ✅ Pass |
-| **Maze** | **99** | ✅ Pass |
+| No obstacles | 0 | Pass |
+| Sparse | 2 | Pass |
+| Dense | 27 | Pass |
+| **Maze** | **99** | Pass |
 
 **Key Finding**: Successfully navigates through complex environments with 99 obstacles.
 
@@ -62,8 +62,8 @@ Tests system behavior with impossible mission requirements:
 
 | Scenario | Expected | Actual | Graceful Handling |
 |----------|----------|--------|-------------------|
-| Insufficient battery | Failure | Violation detected | ✅ Yes |
-| No visibility windows | Low coverage | 0 observations | ✅ Yes |
+| Insufficient battery | Failure | Violation detected | Yes |
+| No visibility windows | Low coverage | 0 observations | Yes |
 
 **Key Finding**: System gracefully handles impossible scenarios without crashing, providing clear violation reports.
 
@@ -90,14 +90,14 @@ All edge case results are saved to `outputs/edge_cases/`:
 
 | Category | Scenarios | Status |
 |----------|-----------|--------|
-| Standard Monte-Carlo | 100 | ✅ 100% pass |
-| Extreme Wind | 7 | ✅ 100% pass |
-| Battery Stress | 4 | ✅ 75% pass (1 expected fail) |
-| Geofencing | 4 | ✅ 100% pass |
-| Orbit Variations | 5 | ✅ 100% tested |
-| Failure Modes | 2 | ✅ 100% handled |
-| Spacecraft Stress | 3 | ✅ 100% pass |
-| **TOTAL** | **125** | **✅ Validated** |
+| Standard Monte-Carlo | 100 | 100% pass |
+| Extreme Wind | 7 | 100% pass |
+| Battery Stress | 4 | 75% pass (1 expected fail) |
+| Geofencing | 4 | 100% pass |
+| Orbit Variations | 5 | 100% tested |
+| Failure Modes | 2 | 100% handled |
+| Spacecraft Stress | 3 | 100% pass |
+| **TOTAL** | **125** | **Validated** |
 
 ## Significance for AeroHack
 

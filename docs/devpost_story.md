@@ -12,7 +12,7 @@ This is the essence of systems-level thinking in aerospace engineering: recogniz
 
 AeroUnity is a unified mission planning framework that solves two distinct aerospace problems using the **same underlying architecture**:
 
-### 🛩️ Aircraft Mission Planning
+### Aircraft Mission Planning
 - Plans optimal routes through waypoints for UAVs/fixed-wing aircraft
 - Respects **wind fields** (time-varying and spatial)
 - Enforces **energy/endurance limits** with battery consumption modeling
@@ -20,7 +20,7 @@ AeroUnity is a unified mission planning framework that solves two distinct aeros
 - Avoids **no-fly zones** using polygon geofencing
 - Minimizes mission time or energy consumption
 
-### 🛰️ Spacecraft Mission Planning
+### Spacecraft Mission Planning
 - Generates **7-day observation schedules** for CubeSat LEO missions
 - Computes **ground target visibility windows** using orbit propagation
 - Schedules **downlinks** during ground station contact windows
