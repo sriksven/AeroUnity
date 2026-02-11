@@ -45,10 +45,14 @@ pip install -r requirements.txt
 Run the complete validation pipeline to generate all results:
 
 ```bash
+# Standard validation (100 Monte-Carlo trials + visualizations)
 python run_complete_validation.py
+
+# Enhanced validation (includes 125 edge case scenarios)
+python run_enhanced_validation.py
 ```
 
-This single command will:
+**Standard validation** will:
 1. ✅ Run aircraft mission planning with Monte-Carlo wind uncertainty (100 trials)
 2. ✅ Run spacecraft mission planning with 7-day scheduling
 3. ✅ Validate all constraints (zero violations required)
@@ -56,7 +60,18 @@ This single command will:
 5. ✅ Export schedules and metrics to JSON/CSV
 6. ✅ Create complete results bundle
 
-**Expected runtime**: 2-3 minutes on modern hardware
+**Enhanced validation** adds:
+7. ✅ Extreme wind conditions (7 scenarios: calm to 32 m/s storm)
+8. ✅ Battery stress tests (4 levels: 50-1000 Wh)
+9. ✅ Complex geofencing (4 densities: 0-99 obstacles)
+10. ✅ Orbit edge cases (5 configurations: LEO, polar, sun-sync, eccentric)
+11. ✅ Failure mode analysis (2 impossible scenarios)
+
+**Expected runtime**: 
+- Standard: 2-3 minutes
+- Enhanced: 3-5 minutes
+
+**Total test coverage**: 125 scenarios
 
 ### Expected Outputs
 
