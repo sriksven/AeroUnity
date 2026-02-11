@@ -1,0 +1,40 @@
+{
+  "minimal": {
+    "battery_capacity_wh": 50.0,
+    "success": false,
+    "energy_used_wh": 80.58676355764253,
+    "energy_used_percent": 161.17352711528503,
+    "time": 2901.123488075131,
+    "waypoints_visited": 16,
+    "violations": [
+      "energy_budget: violation = 128112.34880751307"
+    ]
+  },
+  "low": {
+    "battery_capacity_wh": 100.0,
+    "success": true,
+    "energy_used_wh": 80.58676355764253,
+    "energy_used_percent": 80.58676355764251,
+    "time": 2901.123488075131,
+    "waypoints_visited": 16,
+    "violations": []
+  },
+  "normal": {
+    "battery_capacity_wh": 500.0,
+    "success": true,
+    "energy_used_wh": 80.58676355764253,
+    "energy_used_percent": 16.117352711528504,
+    "time": 2901.123488075131,
+    "waypoints_visited": 16,
+    "violations": []
+  },
+  "extended": {
+    "battery_capacity_wh": 1000.0,
+    "success": true,
+    "energy_used_wh": 80.58676355764253,
+    "energy_used_percent": 8.058676355764252,
+    "time": 2901.123488075131,
+    "waypoints_visited": 16,
+    "violations": []
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "insufficient_battery": {
+    "expected_failure": true,
+    "actual_failure": true,
+    "violations": [
+      "energy_budget: violation = 4467600.0"
+    ],
+    "graceful_handling": true
+  },
+  "no_visibility": {
+    "expected_low_coverage": true,
+    "observations": 0,
+    "targets_covered": 0,
+    "graceful_handling": true
+  }
+}

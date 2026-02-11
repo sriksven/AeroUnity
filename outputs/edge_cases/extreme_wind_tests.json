@@ -1,0 +1,93 @@
+{
+  "calm": {
+    "wind_speed": 0.7071067811865476,
+    "wind_vector": [
+      0.5,
+      0.5,
+      0.0
+    ],
+    "success": true,
+    "time": 1000.0,
+    "energy": 100000.0,
+    "distance": 20000.0,
+    "violations": []
+  },
+  "moderate": {
+    "wind_speed": 7.0710678118654755,
+    "wind_vector": [
+      5.0,
+      5.0,
+      0.0
+    ],
+    "success": true,
+    "time": 1000.0,
+    "energy": 100000.0,
+    "distance": 20000.0,
+    "violations": []
+  },
+  "strong": {
+    "wind_speed": 18.027756377319946,
+    "wind_vector": [
+      15.0,
+      10.0,
+      0.0
+    ],
+    "success": true,
+    "time": 1000.0,
+    "energy": 100000.0,
+    "distance": 20000.0,
+    "violations": []
+  },
+  "storm": {
+    "wind_speed": 32.01562118716424,
+    "wind_vector": [
+      25.0,
+      20.0,
+      0.0
+    ],
+    "success": true,
+    "time": 1000.0,
+    "energy": 100000.0,
+    "distance": 20000.0,
+    "violations": []
+  },
+  "crosswind": {
+    "wind_speed": 20.0,
+    "wind_vector": [
+      0.0,
+      20.0,
+      0.0
+    ],
+    "success": true,
+    "time": 1000.0,
+    "energy": 100000.0,
+    "distance": 20000.0,
+    "violations": []
+  },
+  "headwind": {
+    "wind_speed": 20.0,
+    "wind_vector": [
+      -20.0,
+      0.0,
+      0.0
+    ],
+    "success": true,
+    "time": 1000.0,
+    "energy": 100000.0,
+    "distance": 20000.0,
+    "violations": []
+  },
+  "tailwind": {
+    "wind_speed": 20.0,
+    "wind_vector": [
+      20.0,
+      0.0,
+      0.0
+    ],
+    "success": true,
+    "time": 1000.0,
+    "energy": 100000.0,
+    "distance": 20000.0,
+    "violations": []
+  }
+}

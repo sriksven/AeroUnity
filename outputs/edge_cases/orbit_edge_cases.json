@@ -1,0 +1,57 @@
+{
+  "low_leo": {
+    "altitude_km": 200.0,
+    "eccentricity": 0.0,
+    "inclination_deg": 51.6,
+    "success": false,
+    "num_observations": 9,
+    "mission_value": 9.0,
+    "violations": [
+      "duty_cycle: violation = 4.0"
+    ]
+  },
+  "high_leo": {
+    "altitude_km": 600.0,
+    "eccentricity": 0.0,
+    "inclination_deg": 51.6,
+    "success": false,
+    "num_observations": 9,
+    "mission_value": 9.0,
+    "violations": [
+      "duty_cycle: violation = 4.0"
+    ]
+  },
+  "polar_orbit": {
+    "altitude_km": 400.0,
+    "eccentricity": 0.0,
+    "inclination_deg": 90.0,
+    "success": false,
+    "num_observations": 9,
+    "mission_value": 9.0,
+    "violations": [
+      "duty_cycle: violation = 4.0"
+    ]
+  },
+  "sun_sync": {
+    "altitude_km": 400.0,
+    "eccentricity": 0.0,
+    "inclination_deg": 97.8,
+    "success": false,
+    "num_observations": 9,
+    "mission_value": 9.0,
+    "violations": [
+      "duty_cycle: violation = 4.0"
+    ]
+  },
+  "eccentric": {
+    "altitude_km": 400.0,
+    "eccentricity": 0.3,
+    "inclination_deg": 51.6,
+    "success": false,
+    "num_observations": 9,
+    "mission_value": 9.0,
+    "violations": [
+      "duty_cycle: violation = 4.0"
+    ]
+  }
+}

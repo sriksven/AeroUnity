@@ -1,0 +1,30 @@
+{
+  "no_obstacles": {
+    "num_obstacles": 0,
+    "success": true,
+    "time": 1414.213562373095,
+    "distance": 28284.26,
+    "violations": []
+  },
+  "sparse_obstacles": {
+    "num_obstacles": 2,
+    "success": true,
+    "time": 1414.213562373095,
+    "distance": 28284.26,
+    "violations": []
+  },
+  "dense_obstacles": {
+    "num_obstacles": 27,
+    "success": true,
+    "time": 1414.213562373095,
+    "distance": 28284.26,
+    "violations": []
+  },
+  "maze_obstacles": {
+    "num_obstacles": 99,
+    "success": true,
+    "time": 1414.213562373095,
+    "distance": 28284.26,
+    "violations": []
+  }
+}
