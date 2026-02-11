@@ -1,0 +1,11 @@
+{
+  "total_time_s": 541.6796574924226,
+  "total_time_min": 9.027994291540377,
+  "total_distance_m": 10833.57,
+  "total_distance_km": 10.83357,
+  "total_energy_j": 54167.96574924226,
+  "total_energy_wh": 15.046657152567295,
+  "avg_speed_ms": 19.99995726284321,
+  "energy_efficiency_j_per_m": 5.000010684312029,
+  "waypoints_visited": 7
+}

@@ -1,0 +1,1 @@
+"""Aircraft module initialization."""

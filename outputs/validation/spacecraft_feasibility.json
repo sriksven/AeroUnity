@@ -1,0 +1,14 @@
+{
+  "schedule_valid": true,
+  "num_activities": 129,
+  "overlaps": {
+    "count": 0,
+    "overlaps": []
+  },
+  "constraint_violations": [],
+  "coverage_stats": {
+    "targets_observed": 5,
+    "total_targets": 5,
+    "coverage_percent": 100.0
+  }
+}

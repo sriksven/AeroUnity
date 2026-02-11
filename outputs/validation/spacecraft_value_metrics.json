@@ -1,0 +1,20 @@
+{
+  "total_science_value": 1051.0,
+  "num_observations": 129,
+  "num_downlinks": 0,
+  "observations_per_day": 18.428571428571427,
+  "downlinks_per_day": 0.0,
+  "observation_efficiency": {
+    "total_visibility_windows": 129,
+    "observations_scheduled": 129,
+    "window_utilization_percent": 100.0
+  },
+  "schedule_stats": {
+    "total_activities": 129,
+    "num_observations": 129,
+    "num_downlinks": 0,
+    "total_duration_hours": 167.14166666666668,
+    "active_time_hours": 1.075,
+    "utilization_percent": 0.6431669741237473
+  }
+}

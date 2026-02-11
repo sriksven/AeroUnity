@@ -1,0 +1,19 @@
+{
+  "overall_valid": true,
+  "violations": [],
+  "geofence_check": {
+    "violations": 0,
+    "violation_indices": [],
+    "total_waypoints": 7
+  },
+  "energy_check": {
+    "consumed": 54167.96574924226,
+    "capacity": 1800000.0,
+    "remaining": 1745832.0342507577,
+    "remaining_percent": 96.99066856948654
+  },
+  "path_continuity": {
+    "max_segment_length": 4000.0,
+    "continuous": true
+  }
+}

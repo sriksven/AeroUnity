@@ -1,0 +1,26 @@
+{
+  "baseline": {
+    "name": "Baseline",
+    "mission_value": 1051.0,
+    "num_observations": 129,
+    "num_downlinks": 0
+  },
+  "high_priority_targets": {
+    "name": "High Priority Targets",
+    "mission_value": 2102.0,
+    "num_observations": 129,
+    "num_downlinks": 0
+  },
+  "limited_ground_stations": {
+    "name": "Limited Ground Stations",
+    "mission_value": 1051.0,
+    "num_observations": 129,
+    "num_downlinks": 0
+  },
+  "short_mission": {
+    "name": "Short Mission (3 days)",
+    "mission_value": 463.0,
+    "num_observations": 57,
+    "num_downlinks": 0
+  }
+}
