@@ -1,0 +1,16 @@
+{
+  "aircraft": {
+    "monte_carlo_success_rate": 1.0,
+    "constraint_violations": 0,
+    "mission_time_min": 9.027994291540377,
+    "energy_wh": 15.046657152567295,
+    "distance_km": 10.83357
+  },
+  "spacecraft": {
+    "schedule_valid": true,
+    "science_value": 1051.0,
+    "num_observations": 129,
+    "num_downlinks": 0,
+    "utilization_percent": 0.6431669741237473
+  }
+}

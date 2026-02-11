@@ -1,3 +1,4 @@
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
@@ -12,10 +13,18 @@ build/
 .pytest_cache/
 .coverage
 htmlcov/
+
+# OS
 .DS_Store
+
+# Generated outputs (regenerable)
 outputs/*.png
-outputs/*.csv
-outputs/*.json
-!outputs/.gitkeep
+*.log
+
+# Keep validation results
+!outputs/**/*.json
+!outputs/**/*.csv
+
+# Documentation
 *.pdf
 !docs/*.pdf
