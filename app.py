@@ -73,7 +73,7 @@ st.markdown('<p class="sub-header">Unified constraint-based planning for aircraf
 
 # Sidebar
 with st.sidebar:
-    st.image("https://via.placeholder.com/300x100/667eea/ffffff?text=AeroUnity", use_container_width=True)
+    st.image("https://via.placeholder.com/300x100/667eea/ffffff?text=AeroUnity", width="stretch")
     
     mission_type = st.radio(
         "Select Mission Type",
@@ -145,21 +145,21 @@ if "Aircraft" in mission_type:
         if st.button("🚀 Plan Mission", key="plan_aircraft"):
             with st.spinner("Planning optimal route..."):
                 try:
-                    # Create aircraft parameters
+                    # Create aircraft parameters (using dataclass defaults, override specific values)
                     aircraft_params = AircraftParams(
-                        cruise_speed=cruise_speed,
+                        max_speed=cruise_speed,
                         max_turn_rate=max_turn_rate,
                         max_bank_angle=np.radians(30),
-                        energy_capacity=battery_capacity * 3600,  # Wh to J
-                        base_power=100.0  # W
+                        battery_capacity=battery_capacity * 3600,  # Wh to J
+                        power_consumption_base=100.0  # W
                     )
                     
                     # Create wind model
                     wind_x = wind_speed * np.cos(np.radians(wind_direction))
                     wind_y = wind_speed * np.sin(np.radians(wind_direction))
                     wind_model = WindModel(
-                        mean_wind=np.array([wind_x, wind_y]),
-                        std_wind=np.array([1.0, 1.0])
+                        wind_type='constant',
+                        base_wind=np.array([wind_x, wind_y, 0.0])
                     )
                     
                     # Create no-fly zones (simplified - using None for demo)
