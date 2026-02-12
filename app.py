@@ -233,9 +233,11 @@ if "Aircraft" in mission_type:
     with col2:
         st.subheader("Mission Preview")
         
-        # Generate random waypoints for preview
-        np.random.seed(42)
-        waypoints = np.random.rand(num_waypoints, 2) * 5000
+        # Generate random waypoints (dynamic based on parameters)
+        # Use hash of parameters as seed for reproducibility within same config
+        seed = hash((num_waypoints, wind_speed, wind_direction, battery_capacity)) % 10000
+        np.random.seed(seed)
+        waypoints = np.random.rand(num_waypoints, 3) * np.array([5000, 5000, altitude])
         
         st.markdown(f"""
         **Configuration Summary:**
@@ -390,7 +392,10 @@ else:  # Spacecraft
                         epoch=epoch
                     )
                     
-                    # Create ground targets
+                    # Create ground targets (dynamic based on parameters)
+                    # Use hash of parameters as seed for reproducibility within same config
+                    seed = hash((num_targets, altitude, inclination, mission_duration)) % 10000
+                    np.random.seed(seed)
                     targets = []
                     for i in range(num_targets):
                         lat = -60 + np.random.rand() * 120  # -60 to 60
