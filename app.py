@@ -175,7 +175,7 @@ if "Aircraft" in mission_type:
                     )
                     
                     # Solve
-                    solution = planner.plan()
+                    solution = planner.solve()
                     
                     if solution:
                         st.success("✅ Mission planned successfully!")
@@ -316,7 +316,7 @@ else:  # Spacecraft
                     )
                     
                     # Solve
-                    solution = planner.plan()
+                    solution = planner.solve()
                     
                     if solution:
                         st.success("✅ Mission scheduled successfully!")
