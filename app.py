@@ -13,9 +13,9 @@ from datetime import datetime, timedelta
 # Add src to path
 sys.path.insert(0, str(Path(__file__).parent))
 
-from src.aircraft.planner import AircraftPlanner
-from src.spacecraft.planner import SpacecraftPlanner
-from src.aircraft.environment import WindField, NoFlyZone
+from src.aircraft.planner import AircraftMissionPlanner
+from src.spacecraft.planner import SpacecraftMissionPlanner
+from src.aircraft.models import AircraftParams, WindModel
 from src.spacecraft.orbit import OrbitalElements, GroundTarget, GroundStation
 
 # Page config
@@ -145,35 +145,33 @@ if "Aircraft" in mission_type:
         if st.button("🚀 Plan Mission", key="plan_aircraft"):
             with st.spinner("Planning optimal route..."):
                 try:
-                    # Create wind field
-                    wind_x = wind_speed * np.cos(np.radians(wind_direction))
-                    wind_y = wind_speed * np.sin(np.radians(wind_direction))
-                    wind_field = WindField(
-                        grid_size=(10, 10),
-                        wind_vectors=np.array([[wind_x, wind_y]] * 100).reshape(10, 10, 2)
-                    )
-                    
-                    # Create no-fly zones
-                    no_fly_zones = []
-                    for i in range(num_obstacles):
-                        center = np.random.rand(2) * 5000
-                        size = 200 + np.random.rand() * 300
-                        vertices = [
-                            (center[0] - size/2, center[1] - size/2),
-                            (center[0] + size/2, center[1] - size/2),
-                            (center[0] + size/2, center[1] + size/2),
-                            (center[0] - size/2, center[1] + size/2),
-                        ]
-                        no_fly_zones.append(NoFlyZone("NFZ_" + str(i), vertices))
-                    
-                    # Create planner
-                    planner = AircraftPlanner(
-                        waypoints=waypoints,
-                        wind_field=wind_field,
-                        no_fly_zones=no_fly_zones,
+                    # Create aircraft parameters
+                    aircraft_params = AircraftParams(
                         cruise_speed=cruise_speed,
                         max_turn_rate=max_turn_rate,
-                        energy_capacity=battery_capacity * 3600  # Wh to J
+                        max_bank_angle=np.radians(30),
+                        energy_capacity=battery_capacity * 3600,  # Wh to J
+                        base_power=100.0  # W
+                    )
+                    
+                    # Create wind model
+                    wind_x = wind_speed * np.cos(np.radians(wind_direction))
+                    wind_y = wind_speed * np.sin(np.radians(wind_direction))
+                    wind_model = WindModel(
+                        mean_wind=np.array([wind_x, wind_y]),
+                        std_wind=np.array([1.0, 1.0])
+                    )
+                    
+                    # Create no-fly zones (simplified - using None for demo)
+                    no_fly_zones = None  # Simplified for Streamlit demo
+                    
+                    # Create planner
+                    planner = AircraftMissionPlanner(
+                        name="Streamlit_Mission",
+                        aircraft_params=aircraft_params,
+                        wind_model=wind_model,
+                        waypoints=[waypoints[i] for i in range(len(waypoints))],
+                        no_fly_zones=no_fly_zones
                     )
                     
                     # Solve
@@ -309,11 +307,12 @@ else:  # Spacecraft
                     ]
                     
                     # Create planner
-                    planner = SpacecraftPlanner(
+                    planner = SpacecraftMissionPlanner(
+                        name="Streamlit_Mission",
                         orbital_elements=orbital_elements,
-                        targets=targets,
+                        ground_targets=targets,
                         ground_stations=stations,
-                        mission_duration=timedelta(days=mission_duration)
+                        mission_duration_days=mission_duration
                     )
                     
                     # Solve
