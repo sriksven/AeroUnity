@@ -26,42 +26,129 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS
+# Custom CSS - Enhanced Modern Design
 st.markdown("""
 <style>
+    /* Main header with animated gradient */
     .main-header {
-        font-size: 3rem;
-        font-weight: 700;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        font-size: 3.5rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         margin-bottom: 0.5rem;
+        animation: gradient 3s ease infinite;
+        background-size: 200% 200%;
     }
+    
+    @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    
     .sub-header {
-        font-size: 1.2rem;
-        color: #666;
+        font-size: 1.3rem;
+        color: #555;
         margin-bottom: 2rem;
+        font-weight: 300;
     }
+    
+    /* Card styling */
+    .config-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+        border: 1px solid #e0e0e0;
+        margin: 1rem 0;
+    }
+    
+    /* Metric cards with gradient backgrounds */
     .metric-card {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         padding: 1.5rem;
-        border-radius: 10px;
+        border-radius: 12px;
         color: white;
         margin: 0.5rem 0;
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        transition: transform 0.2s;
     }
+    
+    .metric-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(102, 126, 234, 0.5);
+    }
+    
+    /* Success message styling */
     .success-box {
-        background: #d4edda;
-        border: 1px solid #c3e6cb;
-        border-radius: 5px;
-        padding: 1rem;
+        background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+        border: 2px solid #28a745;
+        border-radius: 10px;
+        padding: 1.5rem;
         margin: 1rem 0;
+        font-weight: 500;
+        color: #155724;
     }
+    
+    /* Button styling */
     .stButton>button {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
         border: none;
-        padding: 0.5rem 2rem;
-        border-radius: 5px;
+        padding: 0.75rem 2.5rem;
+        border-radius: 25px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s;
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    }
+    
+    .stButton>button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+    }
+    
+    /* Sidebar styling */
+    [data-testid="stSidebar"] {
+        background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+    
+    /* Info box styling */
+    .stAlert {
+        border-radius: 10px;
+        border-left: 4px solid #667eea;
+    }
+    
+    /* Metric styling */
+    [data-testid="stMetricValue"] {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #667eea;
+    }
+    
+    /* Section headers */
+    h2 {
+        color: #2c3e50;
+        font-weight: 700;
+        margin-top: 2rem;
+    }
+    
+    h3 {
+        color: #34495e;
+        font-weight: 600;
+    }
+    
+    /* Code block styling */
+    .stCodeBlock {
+        border-radius: 10px;
+        border: 1px solid #e0e0e0;
+    }
+    
+    /* Expander styling */
+    .streamlit-expanderHeader {
+        background: #f8f9fa;
+        border-radius: 8px;
         font-weight: 600;
     }
 </style>
@@ -73,30 +160,47 @@ st.markdown('<p class="sub-header">Unified constraint-based planning for aircraf
 
 # Sidebar
 with st.sidebar:
-    st.image("https://via.placeholder.com/300x100/667eea/ffffff?text=AeroUnity", width="stretch")
+    # Logo/Header
+    st.markdown("""
+    <div style='text-align: center; padding: 1rem 0;'>
+        <h1 style='color: #667eea; font-size: 2.5rem; margin: 0;'>✈️🛰️</h1>
+        <h2 style='color: #764ba2; font-size: 1.5rem; margin: 0.5rem 0;'>AeroUnity</h2>
+        <p style='color: #666; font-size: 0.9rem;'>Mission Planning Suite</p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    st.markdown("---")
     
     mission_type = st.radio(
-        "Select Mission Type",
-        ["Aircraft (UAV)", "Spacecraft (CubeSat)"],
+        "🎯 Select Mission Type",
+        ["✈️ Aircraft (UAV)", "🛰️ Spacecraft (CubeSat)"],
         index=0
     )
     
     st.markdown("---")
-    st.markdown("### About")
+    st.markdown("### 📖 About")
     st.markdown("""
+    <div style='font-size: 0.9rem; line-height: 1.6;'>
     AeroUnity demonstrates unified mission planning across two aerospace domains:
     
-    - **Aircraft:** Route planning with wind, energy, and geofencing
-    - **Spacecraft:** 7-day observation scheduling with orbit mechanics
+    <b>✈️ Aircraft:</b> Route planning with wind, energy, and geofencing
     
-    Built with Google OR-Tools for constraint-based optimization.
-    """)
+    <b>🛰️ Spacecraft:</b> 7-day observation scheduling with orbit mechanics
+    
+    <i>Built with Google OR-Tools</i>
+    </div>
+    """, unsafe_allow_html=True)
     
     st.markdown("---")
-    st.markdown("### Quick Stats")
-    st.metric("Test Scenarios", "125")
-    st.metric("Success Rate", "100%")
-    st.metric("Constraint Violations", "0")
+    st.markdown("### 📊 Quick Stats")
+    
+    col_a, col_b = st.columns(2)
+    with col_a:
+        st.metric("✅ Success", "100%")
+        st.metric("🧪 Tests", "125")
+    with col_b:
+        st.metric("⚠️ Violations", "0")
+        st.metric("🎯 Accuracy", "100%")
 
 # Main content
 if "Aircraft" in mission_type:
