@@ -2,6 +2,9 @@
 
 **One Framework, Two Worlds: Unified Mission Planning for Air and Space**
 
+> 🏆 **Winner — [AeroHack 2026](https://aerohack.devpost.com/)**
+> *Advanced aerospace hackathon for builders: UAV + space mission ops, optimisation, and robust engineering. Earn a spot on the follow-on team.*
+
 A unified aerospace mission planning framework for AeroHack 2026 that demonstrates both aircraft (UAV/fixed-wing) and spacecraft (CubeSat LEO) mission planning using a single, shared constraint-based optimization approach.
 
 ## Overview
